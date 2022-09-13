@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" data-layout="vertical" data-layout-style="default" data-layout-position="fixed" data-topbar="light"
+      data-sidebar="dark" data-sidebar-size="sm-hover" data-layout-width="fluid">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description"/>
+    <meta content="Themesbrand" name="author"/>
+    <!-- App favicon -->
+    <!-- swiper slider css -->
+    <link href="{{ asset('velzon/libs/swiper/swiper-bundle.min.css') }}" rel="stylesheet"/>
+
+    <!-- Layout config Js -->
+    <script src="{{ asset('velzon/js/layout.js') }}"></script>
+    <!-- Bootstrap Css -->
+    <link href="{{ asset('velzon/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
+    <!-- Icons Css -->
+    <link href="{{ asset('velzon/css/icons.min.css') }}" rel="stylesheet" type="text/css"/>
+    <!-- App Css-->
+    <link href="{{ asset('velzon/css/app.min.css') }}" rel="stylesheet" type="text/css"/>
+    <!-- custom Css-->
+    <link href="{{ asset('velzon/css/custom.min.css') }}" rel="stylesheet" type="text/css"/>
+
+    {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+    {% block stylesheets %}
+    {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+
+</head>
+<body>
+<div id="layout-wrapper">
+    {% include "admin/navbar.html.twig" %}
+    {% include "admin/sidebar.html.twig" %}
+    <div class="vertical-overlay"></div>
+
+    <div class="main-content">
+
+        <div class="page-content">
+                {% block body %}{% endblock %}
+            <!-- container-fluid -->
+        </div>
+        <!-- End Page-content -->
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <script>document.write(new Date().getFullYear())</script>
+                        © Velzon.
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="text-sm-end d-none d-sm-block">
+                            Design & Develop by Themesbrand
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    {% include "admin/setting.html.twig" %}
+
+    <!-- JAVASCRIPT -->
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+    <script src="{{ asset('velzon/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('velzon/libs/simplebar/simplebar.min.js') }}"></script>
+    <script src="{{ asset('velzon/libs/node-waves/waves.min.js') }}"></script>
+    <script src="{{ asset('velzon/libs/feather-icons/feather.min.js') }}"></script>
+    <script src="{{ asset('velzon/js/pages/plugins/lord-icon-2.1.0.js') }}"></script>
+    <script src="{{ asset('velzon/js/plugins.js') }}"></script>
+
+    <!-- apexcharts -->
+    <script src="{{ asset('velzon/libs/apexcharts/apexcharts.min.js') }}"></script>
+
+    <!-- Swiper Js -->
+    <script src="{{ asset('velzon/libs/swiper/swiper-bundle.min.js') }}"></script>
+
+    <!-- CRM js -->
+    <script src="{{ asset('velzon/js/pages/dashboard-crypto.init.js') }}"></script>
+
+    <!-- App js -->
+    <script src="{{ asset('velzon/js/app.js') }}"></script>
+</div>
+</body>
+</html>
