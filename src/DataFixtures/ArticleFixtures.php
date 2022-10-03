@@ -33,6 +33,7 @@ class ArticleFixtures extends Fixture implements OrderedFixtureInterface
             $article
                 ->setUser($id)
                 ->setNom($faker->lastName)
+               ->setStock($faker->numberBetween(1,88))
                 ->setDescription($faker->text)
                 ->setType($typeid)
                 ->setPrix($faker->numberBetween(300,9000));
@@ -46,3 +47,4 @@ class ArticleFixtures extends Fixture implements OrderedFixtureInterface
         return 3;
     }
 }
+

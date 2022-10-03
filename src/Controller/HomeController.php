@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
-    #[Route('/', name: 'app_dashboard')]
+    #[Route('admin/', name: 'app_dashboard')]
     public function index(ArticleRepository $articleRepository,UserRepository $userRepository, MessageRepository $messageRepository,
                           TypeRepository $typeRepository): Response
     {
@@ -37,7 +37,7 @@ class HomeController extends AbstractController
             'countGold'=>count($countGold),'countBoost'=>$countBoost,]);
     }
 
-    #[Route('/statistique', name: 'app_statistique', methods: ['GET'])]
+    #[Route('admin/statistique', name: 'app_statistique', methods: ['GET'])]
     public function stat(): Response
     {
         return $this->render('home/statistique.html.twig', [
